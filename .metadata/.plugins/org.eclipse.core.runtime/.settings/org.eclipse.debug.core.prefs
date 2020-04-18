@@ -1,0 +1,6 @@
+//org.eclipse.debug.core.PREFERRED_DELEGATES/org.eclipse.cdt.launch.applicationLaunchType=org.eclipse.cdt.dsf.gdb.launch.localCLaunch,debug,;org.eclipse.cdt.cdi.launch.localCLaunch,run,;
+//org.eclipse.debug.core.PREFERRED_DELEGATES/org.eclipse.cdt.launch.attachLaunchType=org.eclipse.cdt.dsf.gdb.launch.attachCLaunch,debug,;
+//org.eclipse.debug.core.PREFERRED_DELEGATES/org.eclipse.cdt.launch.postmortemLaunchType=org.eclipse.cdt.dsf.gdb.launch.coreCLaunch,debug,;
+//org.eclipse.debug.core.PREFERRED_DELEGATES/org.eclipse.cdt.launch.remoteApplicationLaunchType=org.eclipse.rse.remotecdt.dsf.debug,debug,;
+eclipse.preferences.version=1
+prefWatchExpressions=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<watchExpressions>\r\n<expression enabled\="true" text\="GRP( USCI_A0__UART_Mode ).REG( UCA0TXBUF )"/>\r\n<expression enabled\="true" text\="MasterMode"/>\r\n<expression enabled\="true" text\="GRP( USCI_B0__I2C_Mode ).REG( UCB0I2CIE ).BFLD( UCNACKIE )"/>\r\n<expression enabled\="true" text\="GRP( USCI_B0__I2C_Mode ).REG( UCB0TXBUF )"/>\r\n<expression enabled\="true" text\="GRP( USCI_B0__I2C_Mode ).REG( UCB0RXBUF )"/>\r\n<expression enabled\="true" text\="GRP( USCI_B0__I2C_Mode ).REG( UCB0STAT )"/>\r\n<expression enabled\="true" text\="sunlight_value"/>\r\n</watchExpressions>\r\n

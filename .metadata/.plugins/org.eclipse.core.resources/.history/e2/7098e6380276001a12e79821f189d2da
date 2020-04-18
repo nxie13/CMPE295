@@ -1,0 +1,49 @@
+/*
+ * comm.h
+ *
+ *  Created on: Mar 30, 2020
+ *      Author: Matt
+ */
+
+#ifndef COMM_H_
+#define COMM_H_
+
+#include <msp430.h>
+#include <stdio.h>
+#include <stdint.h>
+#include <stdbool.h>
+
+#define MAX_BUFFER_SIZE 4
+//I2C State Machine Struct
+typedef enum I2C_ModeEnum{
+    IDLE_MODE,
+    TX_REG_CMD_MODE,
+    RX_REG_CMD_MODE,
+    TX_DATA_MODE,
+    RX_DATA_MODE,
+    SWITCH_TO_RX_MODE,
+    SWITHC_TO_TX_MODE,
+} I2C_Mode;
+
+I2C_Mode MasterMode = IDLE_MODE;
+
+uint8_t ReceiveBuffer[MAX_BUFFER_SIZE] = { 0 };
+uint8_t RXByteCtr = 0;
+uint8_t ReceiveIndex = 0;
+uint8_t TransmitBuffer[MAX_BUFFER_SIZE] = { 0 };
+uint8_t TXByteCtr = 0;
+uint8_t TransmitIndex = 0;
+
+/* The Register Address/Command to use*/
+static uint8_t TransmitRegAddr = 0;
+
+void I2C_init(void);
+void UART_init(void);
+
+I2C_Mode I2C_send_msg(uint8_t addr, uint8_t cmd, uint8_t *reg_data, uint8_t count);
+I2C_Mode I2C_receive_msg(uint8_t addr, uint8_t cmd, uint8_t count);
+I2C_Mode I2C_send_and_receive_msg(uint8_t addr, uint8_t cmd, uint8_t rx_count);
+void CopyArray(uint8_t *source, uint8_t *dest, uint8_t count);
+
+
+#endif /* COMM_H_ */

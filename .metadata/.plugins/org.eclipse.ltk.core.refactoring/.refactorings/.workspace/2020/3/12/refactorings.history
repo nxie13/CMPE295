@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;cmpe295_project/printf_sub.h&apos;" deleteContents="false" description="Delete resource &apos;cmpe295_project/printf_sub.h&apos;" element1="/cmpe295_project/printf_sub.h" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1584517565340"/>
+</session>

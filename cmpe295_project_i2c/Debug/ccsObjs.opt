@@ -1,0 +1,1 @@
+"./comm.obj" "./main_i2c.obj" "./port_and_clock.obj" "./sunlight_sensor.obj" "./temp_sensor.obj" "../lnk_msp430g2533.cmd" -llibc.a 

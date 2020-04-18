@@ -1,0 +1,20 @@
+
+**** Build of configuration Debug for project cmpe295_project_i2c ****
+
+"C:\\ti\\ccs901\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main_i2c.c"
+Invoking: MSP430 Compiler
+"C:/ti/ccs901/ccs/tools/compiler/ti-cgt-msp430_18.12.4.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="C:/ti/ccs901/ccs/ccs_base/msp430/include" --include_path="C:/Users/Matt/CMPE295_workspace/cmpe295_project_i2c" --include_path="C:/ti/ccs901/ccs/tools/compiler/ti-cgt-msp430_18.12.4.LTS/include" --advice:power=all --define=__MSP430G2533__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="main_i2c.d_raw"  "../main_i2c.c"
+"../main_i2c.c", line 60: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../main_i2c.c", line 154: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+Finished building: "../main_i2c.c"
+ 
+Building target: "cmpe295_project_i2c.out"
+Invoking: MSP430 Linker
+"C:/ti/ccs901/ccs/tools/compiler/ti-cgt-msp430_18.12.4.LTS/bin/cl430" -vmsp --use_hw_mpy=none --advice:power=all --define=__MSP430G2533__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number -z -m"cmpe295_project_i2c.map" --heap_size=80 --stack_size=80 -i"C:/ti/ccs901/ccs/ccs_base/msp430/include" -i"C:/ti/ccs901/ccs/tools/compiler/ti-cgt-msp430_18.12.4.LTS/lib" -i"C:/ti/ccs901/ccs/tools/compiler/ti-cgt-msp430_18.12.4.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="cmpe295_project_i2c_linkInfo.xml" --use_hw_mpy=none --rom_model -o "cmpe295_project_i2c.out" "./comm.obj" "./main_i2c.obj" "./port_and_clock.obj" "./sunlight_sensor.obj" "./temp_sensor.obj" "../lnk_msp430g2533.cmd"  -llibc.a 
+<Linking>
+Finished building target: "cmpe295_project_i2c.out"
+ 
+
+**** Build Finished ****
