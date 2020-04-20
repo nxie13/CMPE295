@@ -114,7 +114,7 @@ void main(void)
         send_to_UART_per_sensor(TEMP, temp_data);
         send_to_UART_per_sensor(HUM, hum_data);*/
 
-        send_to_UART(data_buf, 16); //Total of 16 bytes TODO: won't work beyond 5 bytes
+        send_to_UART(data_buf, 16); //Total of 16 bytes send to UART
 
         // while (P2IN & BIT2); //wait for Xbee to Signal ready on pin P2.2
         P2DIR &= ~BIT5; //switch back to input again
