@@ -47,9 +47,8 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <stdbool.h>
-#include "temp_sensor.h"
-#include "sunlight_sensor.h"
 #include "port_and_clock.h"
+#include "comm.h"
 
 /**
  * main.c
@@ -58,63 +57,27 @@ void main(void)
 {
     clock_init();
     port_init();
-    I2C_init();
     UART_init();
     timer_init();
     __enable_interrupt(); //Enable interrupts
-
-    P2IFG &= ~BIT5; //clear interrupt
-
-    temp_hum_soft_reset();
-    reset_sunlight_sensor();
-    configure_sunlight_sensor();
     __delay_cycles(COMM_WAIT_TIME);
 
     while (1)
     {
+        // you should see 0x1 - 0xAA - 0xAA followed by 0x2 - 0xBB - 0xBB
+
         //P2OUT |= BIT0; //LED ON
         P2DIR |= BIT5; //switch to output to wake up Xbee
         P2OUT &= ~BIT5; //output low to pull sleep pin down
 
         uint8_t data_buf[16] = { 0 };
-        data_buf[0] = 15; //Total of 15 bytes following the first byte
-
-        uint16_t temp_data = get_temperature();
-        data_buf[1] = TEMP;
-        data_buf[2] = temp_data >> 8;
-        data_buf[3] = temp_data & 0xFF;
-
-        uint16_t hum_data = get_humidity();
-        data_buf[4] = HUM;
-        data_buf[5] = hum_data >> 8;
-        data_buf[6] = hum_data & 0xFF;
-
-        uint16_t vis_data = read_sunlight_VIS();
-        data_buf[7] = VIS;
-        data_buf[8] = vis_data >> 8;
-        data_buf[9] = vis_data & 0xFF;
-
-        uint16_t uv_data = read_sunlight_UV();
-        data_buf[10] = UV;
-        data_buf[11] = uv_data >> 8;
-        data_buf[12] = uv_data & 0xFF;
-
-        uint16_t ir_value = read_sunlight_IR();
-        data_buf[13] = IR;
-        data_buf[14] = ir_value >> 8;
-        data_buf[15] = ir_value & 0xFF;
+        data_buf[0] = 0xAA;
+        data_buf[1] = 0xBB;
 
         //while (!(P2IN & BIT2)); //wait for Xbee to Signal ready on pin P2.2
 
         //Xbee is now ready, send data over UART
-
-        /*send_to_UART_per_sensor(VIS, vis_data);
-        send_to_UART_per_sensor(UV, uv_data);
-        send_to_UART_per_sensor(IR, ir_value);
-        send_to_UART_per_sensor(TEMP, temp_data);
-        send_to_UART_per_sensor(HUM, hum_data);*/
-
-        send_to_UART(data_buf, 16); //Total of 16 bytes TODO: won't work beyond 5 bytes
+        send_to_UART(data_buf, 2);
 
         // while (P2IN & BIT2); //wait for Xbee to Signal ready on pin P2.2
         P2DIR &= ~BIT5; //switch back to input again

@@ -29,10 +29,6 @@ uint16_t get_humidity(void)
 void temp_hum_soft_reset(void)
 {
     //perform soft reset (rebooting sensor system without switching power off)
-    uint8_t sensor_address = 0x80; //0b1000_000 + R/W
-    uint8_t soft_reset_cmd = 0xFE; //0b1111_1110 (hold master)
-    uint8_t temp_placer = 0;
-
     uint8_t temp = 0;
     I2C_send_msg(SLAVE_ADDRESS, SOFT_RESET, temp, 0);
 }

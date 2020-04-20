@@ -4,7 +4,7 @@
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_PROGRAM.MSP430G2533.ccxml.TI MSP430 USB1/MSP430" value="${build_artifact:cmpe295_project_i2c}"/>
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_PROJECT.MSP430G2533.ccxml.TI MSP430 USB1/MSP430" value="cmpe295_project_i2c"/>
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_TARGET_CONFIG" value="${target_config_active_default:cmpe295_project_i2c}"/>
-<stringAttribute key="com.ti.ccstudio.debug.debugModel.MRU_PROGRAM.MSP430G2533.ccxml.TI MSP430 USB1/MSP430" value="C:/Users\Matt\CMPE295_workspace\cmpe295_project_i2c\Debug\cmpe295_project_i2c.out"/>
+<stringAttribute key="com.ti.ccstudio.debug.debugModel.MRU_PROGRAM.MSP430G2533.ccxml.TI MSP430 USB1/MSP430" value="C:\Users\FallenRain\workspace_v10\CMPE295 Project\cmpe295_project_i2c\Debug\cmpe295_project_i2c.out"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
 <listEntry value="/cmpe295_project_i2c"/>
 </listAttribute>
